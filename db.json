@@ -1,0 +1,85 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "陈小龙",
+      "phone": "13480731740",
+      "email": "cxl@qq.com",
+      "education": "学习",
+      "graduationschool": "学校",
+      "profession": "计算机",
+      "profile": "个人介绍",
+      "companyId": 1
+    },
+    {
+      "id": 2,
+      "name": "习近平",
+      "phone": "13800138000",
+      "email": "xjp@qq.com",
+      "education": "学习",
+      "graduationschool": "学校",
+      "profession": "计算机",
+      "profile": "个人介绍",
+      "companyId": 2
+    },
+    {
+      "id": 3,
+      "name": "吴能",
+      "phone": "13800138005",
+      "email": "wu@qq.com",
+      "education": "学习",
+      "graduationschool": "学校",
+      "profession": "计算机",
+      "profile": "个人介绍",
+      "companyId": 3
+    },
+    {
+      "id": 4,
+      "name": "小三",
+      "phone": "13800138003",
+      "email": "xs@qq.com",
+      "education": "学习",
+      "graduationschool": "学校",
+      "profession": "计算机",
+      "profile": "个人介绍",
+      "companyId": 3
+    },
+    {
+      "name": "ff",
+      "phone": "fffffffff",
+      "email": "fff",
+      "education": "ff",
+      "graduationschool": "fffffffffffff",
+      "profession": "fff",
+      "profile": "fffffffff",
+      "id": 5
+    },
+    {
+      "name": "1",
+      "phone": "1",
+      "email": "1",
+      "education": "1",
+      "graduationschool": "1",
+      "profession": "1",
+      "profile": "11",
+      "id": 6
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "苹果",
+      "description": "苹果好"
+    },
+    {
+      "id": 2,
+      "name": "华为",
+      "description": "华为好"
+    },
+    {
+      "id": 3,
+      "name": "小米",
+      "description": "小米好"
+    }
+  ]
+}
