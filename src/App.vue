@@ -16,7 +16,7 @@
             <li class="active"><a href="/">首页</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="javascript:;">添加用户</a></li>
+            <li><router-link :to="'/add'">添加用户</router-link></li>
           </ul>
         </div>
       </div>

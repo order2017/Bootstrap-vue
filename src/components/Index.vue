@@ -16,9 +16,9 @@
         <td>{{ user.name }}</td>
         <td>{{ user.phone }}</td>
         <td>
-          <router-link to="/details" type="button" class="btn btn-default">详情</router-link>
-          <router-link to="/edit" type="button" class="btn btn-primary">编辑</router-link>
-          <router-link to="/delete" type="button" class="btn btn-danger">删除</router-link>
+          <router-link v-bind:to="'/details/'+ user.id" type="button" class="btn btn-default">详情</router-link>
+          <router-link v-bind:to="'/edit/'+ user.id" type="button" class="btn btn-primary">编辑</router-link>
+          <router-link v-bind:to="'/delete/' + user.id" type="button" class="btn btn-danger">删除</router-link>
         </td>
       </tr>
       </tbody>
