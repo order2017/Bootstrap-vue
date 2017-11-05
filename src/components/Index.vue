@@ -1,6 +1,9 @@
 <template>
   <div class="Index container">
     <Alert v-if="alert" v-bind:message="alert"></Alert>
+
+    <input type="text" class="form-control" placeholder="搜索" v-model="filterInput">
+
     <table class="table table-striped">
       <caption>用户管理系统</caption>
 
@@ -13,7 +16,7 @@
       </thead>
 
       <tbody>
-      <tr v-for="user in users">
+      <tr v-for="user in filterBy(users,filterInput)">
         <td>{{ user.name }}</td>
         <td>{{ user.phone }}</td>
         <td>
@@ -35,7 +38,8 @@ export default {
   data () {
     return {
         users: [],
-        alert: ""
+        alert: "",
+        filterInput: ""
     }
   },
   methods: {
@@ -47,6 +51,11 @@ export default {
       deleteUser(id) {
           this.axios.delete("http://localhost:3000/users/"+id).then((response)=>{
               this.$router.push({path:"/",query: this.$layer.msg("用户删除成功！")});
+          })
+      },
+      filterBy(users,value){
+          return users.filter(function(user){
+              return user.name.match(value);
           })
       }
   },
