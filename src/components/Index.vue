@@ -19,7 +19,7 @@
         <td>
           <router-link v-bind:to="'/details/'+ user.id" type="button" class="btn btn-default">详情</router-link>
           <router-link v-bind:to="'/edit/'+ user.id" type="button" class="btn btn-primary">编辑</router-link>
-          <router-link v-bind:to="'/delete/' + user.id" type="button" class="btn btn-danger">删除</router-link>
+          <button v-on:click="deleteUser(user.id)" type="button" class="btn btn-danger">删除</button>
         </td>
       </tr>
       </tbody>
@@ -43,12 +43,20 @@ export default {
           this.axios.get("http://localhost:3000/users").then((response) => {
               this.users = response.data;
           })
+      },
+      deleteUser(id) {
+          this.axios.delete("http://localhost:3000/users/"+id).then((response)=>{
+              this.$router.push({path:"/",query: this.$layer.msg("用户删除成功！")});
+          })
       }
   },
   created() {
       if (this.$route.query.alert){
           this.alert = this.$route.query.alert;
       }
+      this.showUser()
+  },
+  updated() {
       this.showUser()
   },
   components: {
