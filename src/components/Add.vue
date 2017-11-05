@@ -29,13 +29,13 @@ export default {
   name: 'Add',
   data () {
     return {
-        users: {}
+        users: {},
     }
   },
   methods: {
       addUser(e) {
           if (!this.users.name || !this.users.phone) {
-              console.log("请添加对应的信息");
+              this.$layer.msg("请添加对应的信息！");
           }else{
 
               let newUser = {
@@ -45,7 +45,7 @@ export default {
 
               this.axios.post("http://localhost:3000/users",newUser).then((response)=> {
                   //console.log(response);
-                  this.$router.push({path:"/"});
+                  this.$router.push({path:"/",query:{alert: "用户信息添加成功！"}});
               })
               e.preventDefault();
           }

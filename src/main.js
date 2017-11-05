@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import layer from 'vue-layer'
+Vue.prototype.$layer = layer(Vue);
 
 Vue.use(VueAxios, axios)
 

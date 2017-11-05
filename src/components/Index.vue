@@ -1,5 +1,6 @@
 <template>
   <div class="Index container">
+    <Alert v-if="alert" v-bind:message="alert"></Alert>
     <table class="table table-striped">
       <caption>用户管理系统</caption>
 
@@ -28,11 +29,13 @@
 </template>
 
 <script>
+import Alert from './Alert'
 export default {
   name: 'Index',
   data () {
     return {
-        users: []
+        users: [],
+        alert: ""
     }
   },
   methods: {
@@ -43,7 +46,13 @@ export default {
       }
   },
   created() {
+      if (this.$route.query.alert){
+          this.alert = this.$route.query.alert;
+      }
       this.showUser()
+  },
+  components: {
+      Alert
   }
 }
 </script>
