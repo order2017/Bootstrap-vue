@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
 import Add from '@/components/Add'
+import Details from '@/components/Details'
 
 Vue.use(Router)
 
@@ -19,6 +20,11 @@ export default new Router({
         path: '/add',
         name: 'Add',
         component: Add
+    },
+    {
+       path: '/details/:id',
+       name: 'Details',
+       component: Details
     }
   ]
 })
