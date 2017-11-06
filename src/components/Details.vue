@@ -4,15 +4,29 @@
       <li class="list-group-item">{{ users.name }}</li>
       <li class="list-group-item">{{ users.phone }}</li>
     </ul>
+
+    <ul class="list-group">
+      <li class="list-group-item">
+        <vue-q-art :config="config" :downloadButton="downloadButton"></vue-q-art>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import VueQArt from 'vue-qart'
 export default {
   name: 'Details',
   data () {
     return {
-        users: []
+        users: [],
+        config: {
+            value: '',
+            imagePath: '../static/images/logo.png',
+            filter: '',
+            size: 500
+        },
+        downloadButton: false
     }
   },
   methods: {
@@ -25,6 +39,12 @@ export default {
   },
   created() {
       this.fetchUser(this.$route.params.id);
+  },
+  components: {
+      VueQArt
+  },
+  mounted() {
+      this.config.value = window.location.href;
   }
 }
 </script>
